@@ -1,5 +1,6 @@
 import random
 
+
 class DNA:
 	def __init__(self, genes_num):
 		self.genes = [0.5 for i in range(genes_num)]

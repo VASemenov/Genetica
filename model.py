@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import math
 import random
 
+
 class Genetica:
 	def __init__(self, phenotype, genes_num, population_size, fitness_function, mutation_prob=0.03):
 		self.phenotype = phenotype
