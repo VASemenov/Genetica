@@ -47,6 +47,9 @@ class Genetica:
 	def get_best_specie(self):
 		return self.sort_population()[0]
 
+	def get_worst_specie(self):
+		return self.sort_population()[-1]
+
 	def cross_genes(self, genes_x, genes_y):
 		child_dna = DNA(0)
 		for i in range(len(genes_x)):
