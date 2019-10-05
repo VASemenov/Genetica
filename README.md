@@ -20,6 +20,7 @@ Now you can enjoy the core idea of genetic optimization without much pain of get
 ## Installation
 
 Genetica is supported by Pyhton 3.x
+
 Install it through pip:
     
     pip install genetica
