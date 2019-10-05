@@ -4,7 +4,7 @@
 
 **Genetica** is the minimalistic genetic algorithm library for optimizing class parameters.
 
-This high-level library allows you to take any class with certain business logic, modify it a little and then give it back to Genetica to optimize.
+This library allows you to take any class with certain business logic, modify it a little and then give it back to Genetica to optimize.
 
 Right now Genetica is a *minimalistic* library. It lacks some of the fancy aspects of genetic algorithms. Nevertheless, the library was created to optimize some aerospace designs for the author's graduation project.
 
