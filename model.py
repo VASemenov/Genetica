@@ -40,7 +40,7 @@ class Genetica:
 		self.history = list()
 
 		for epoch in range(epochs):
-			self.selection()
+			self.select()
 			self.reproduce()
 			self.history.append(self.get_best_fit())
 
@@ -65,46 +65,71 @@ class Genetica:
 		"""
 
 		# Get genes of even (x) and odd (y) species
-		genes_x = [self.population[i].dna.genes for i in range(0, len(self.population), 2)]
-		genes_y = [self.population[i].dna.genes for i in range(1, len(self.population) - 1, 2)]
+		genes_set_x = [self.population[i].dna.genes for i in range(0, len(self.population), 2)]
+		genes_set_y = [self.population[i].dna.genes for i in range(1, len(self.population) - 1, 2)]
 
 		# Take a pair of odd and even species and cross their genes to create a new specie. Add it to the population
-		for x in genes_x:
+		for parent_x in genes_set_x:
 			# Choose random odd specie
-			y = random.choice(genes_y)
+			parent_y = random.choice(genes_set_y)
 
 			# Get new set of genes
-			child_dna = self.cross_genes(x, y)
+			child_dna = self.cross_genes(parent_x, parent_y)
 
 			# Add newly created species to the population
 			self.population.append(self.phenotype(child_dna))
 
-	def selection(self):
+	def select(self):
 		"""
-		Select 
+		Select the best species from the population (best half)
 		:return:
 		"""
 		self.population = self.sort_population()[:round(self.population_size / 2)]
 		return self.population
 
-	def cross_genes(self, genes_x, genes_y):
-		child_dna = DNA(0)
-		for i in range(len(genes_x)):
-			if random.uniform(0, 1) <= 0.5:
-				child_dna.genes.append(genes_x[i])
-			else:
-				child_dna.genes.append(genes_y[i])
+	def cross_genes(self, parent_x_genes, parent_y_genes):
+		"""
+		Get sets of genes of two species and generate a new set for their child specie
+		:param parent_x_genes: Set of genes of parent x
+		:param parent_y_genes: Set of genes of parent y
+		:return: child's DNA class
+		"""
 
+		# Creating empty child DNA
+		child_dna = DNA(0)
+		for i in range(len(parent_x_genes)):
+			# Randomly selecting parents genes pair by pair.
+			# There is 50% chance of getting a gene from a certain parrent
+
+			if random.uniform(0, 1) <= 0.5:
+				child_dna.genes.append(parent_x_genes[i])
+			else:
+				child_dna.genes.append(parent_y_genes[i])
+
+		# Giving the child the ability to mutate it's genes
 		child_dna.mutate(self.mutation_prob)
+
 		return child_dna
 
 	def get_best_fit(self):
+		"""
+		The best score from the population
+		:return: Fitness function return type
+		"""
 		return self.fitness_function(self.sort_population()[0])
 
 	def get_best_specie(self):
+		"""
+		The best specie from the population
+		:return: Specie class type
+		"""
 		return self.sort_population()[0]
 
 	def get_worst_specie(self):
+		"""
+		The worst specie from the population
+		:return: Specie class type
+		"""
 		return self.sort_population()[-1]
 
 
