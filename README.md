@@ -16,3 +16,10 @@ Now you can enjoy the core idea of genetic optimization without much pain of get
 - Learning process chart (not real-time)
 - Real-time learning feedback
 - Getting the best and worst species' parameters
+
+## Installation
+
+Genetica is supported by Pyhton 3.x
+Install it through pip:
+    
+    pip install genetica
