@@ -9,6 +9,10 @@ import random
 
 
 class DNA:
+	"""
+	DNA class is a set of genes. All of the manipulations with genes 
+	will be happening here.
+	"""
 	def __init__(self, genes_num):
 
 		# Create a random genes set
