@@ -23,7 +23,6 @@ class DNA:
 		Apply the mutation to the genes set
 		:param mutation_prob: probability of mutation
 		"""
-
 		for i in range(len(self.genes)):
 			if random.uniform(0, 1) > mutation_prob:
 				continue
@@ -40,8 +39,10 @@ def genify(options_list, gen):
 	"""
 
 	# Probability steps for projecting to given gen
-	prob_step = round(1 / len(options_list), 2)
+	prob_step = 1 / len(options_list)
 
 	for i in range(len(options_list)):
 		if gen <= i * prob_step:
 			return options_list[i]
+
+	return options_list[-1]
