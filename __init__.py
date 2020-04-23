@@ -1,2 +1,2 @@
-from src.dna import DNA, genify
-from src.model import Genetica
+from genetica.dna import DNA, genify
+from genetica.model import Genetica
