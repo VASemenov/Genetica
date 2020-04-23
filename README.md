@@ -40,7 +40,7 @@ class ExampleModel:
     def __init__(self, dna):
         self.dna = dna
 
-        # Class paraters that are inputs for optimization
+        # Class parameters that are inputs for optimization
         self.a1 = genify(range(1,1890), dna.genes[0])
         self.a2 = genify(range(1,2017), dna.genes[1])
 
