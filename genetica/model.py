@@ -5,7 +5,7 @@
 """
 
 
-from dna import DNA
+from genetica.dna import DNA
 import matplotlib.pyplot as plt
 import random
 
