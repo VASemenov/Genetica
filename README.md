@@ -27,13 +27,15 @@ Install it through pip:
 
 ## Quick start
 
+### Imports
 ```python
 from model import Genetica
 from dna import genify
+```
 
-# EXAMPLE
-# This is how a target class should be structured
+### Class structure
 
+```python
 class ExampleModel:
     def __init__(self, dna):
         self.dna = dna
@@ -55,15 +57,17 @@ class ExampleModel:
     def fitness(self):
         return self.a1 ** self.a1 + self.a1 * self.a2 + self.a2
 
+```
 
-# EXAMPLE
-# Finding min of parameter result in ExampleModel
-# Genetica gets class, number of needed genes to genify parameters, and lambda function, that is,
-# essentially a fitness function
-
+### Running optimization
+```python
 model = Genetica(ExampleModel, 2, 1000, lambda x: x.result)
 model.run()
+```
 
+
+### Getting results
+```python
 print("BEST FIT:", model.get_best_fit())
 print("PARAMS OF BEST FIT:", model.get_best_specie().a1, model.get_best_specie().a2)
 
