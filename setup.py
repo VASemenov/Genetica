@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
   name = 'genetica',
   packages = ['genetica'],
-  version = '0.1',
+  version = '0.5',
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'This library allows you to take any class with certain business logic, modify it a \
    little and then give it back to Genetica to optimize.',   # Give a short description about your library
@@ -25,5 +25,6 @@ setup(
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
   ],
 )
