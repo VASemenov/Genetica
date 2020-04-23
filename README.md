@@ -27,8 +27,7 @@ Install it through pip:
 
 ## Quick start
 
-'''python
-
+```python
 from model import Genetica
 from dna import genify
 
@@ -70,5 +69,4 @@ print("PARAMS OF BEST FIT:", model.get_best_specie().a1, model.get_best_specie()
 
 # Getting populations history of best results for each epoch
 model.plot()
-
-'''
+```
