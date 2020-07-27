@@ -29,8 +29,8 @@ Install it through pip:
 
 ### Imports
 ```python
-from model import Genetica
-from dna import genify
+from genetica.model import Genetica
+from genetica.dna import genify
 ```
 
 ### Class structure
